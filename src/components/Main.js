@@ -1,11 +1,12 @@
 // import React, { useState } from "react";
 import React from "react";
-import SingleEvent from "../components/Event.js";
+// import SingleEvent from "../components/Event.js";
 import Filter from "./Filter";
 import Map from "../components/Map";
 // import "../css/event.css";
 import "../css/grid.css";
-import DataFetching from "../api/DataFetching.js";
+// import SingleEvent from "../SingleEvent";
+import DataFetching from "./DataFetching";
 
 export function Main() {
   //   const allEventsUrl = "https://valuer-jenkins.duckdns.org/api/events/startups";
@@ -17,14 +18,12 @@ export function Main() {
           <Filter />
         </div>
         <div className="col s6 col-events">
-          <SingleEvent />
+          <DataFetching />
         </div>
         <div className="col s6 col-map">
           <Map />
         </div>
       </div>
-
-      <SingleEvent />
     </div>
   );
 }
