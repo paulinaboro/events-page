@@ -17,6 +17,7 @@ export default class DataFetching extends Component {
     events: null
   };
   componentDidMount() {
+    // console.log(this.props.handleMap);
     if (!this.state.events) {
       axios
         .get("http://localhost:3500/test")
@@ -38,7 +39,12 @@ export default class DataFetching extends Component {
     //check if loasding is false than u can render elements
     // console.log(typeof eventsList);
     if (this.state.events) {
-      return <SingleEvent events={this.state.events} />;
+      return (
+        <SingleEvent
+          handleMap={this.props.handleMap}
+          events={this.state.events}
+        />
+      );
     }
     return (
       <div>

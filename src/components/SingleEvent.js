@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import sanitize from "striptags";
-// import "js/materialize.min.js";
-// import "materialize-js/dist/js/materialize.min.js";
-// import M from "metronics";
 import M from "materialize-css";
 import "../css/event.css";
-// import { functionTypeAnnotation } from "@babel/types";
 
 export default class SingleEvent extends Component {
   //   let elems = document.querySelectorAll(".collapsible");
   componentDidMount() {
+    // console.log(`this is single event component ${this.props.handleMap}`);
     // this.initMaterialize();
     // M.AutoInit();
     // console.log("componentDidMount");
@@ -27,6 +24,8 @@ export default class SingleEvent extends Component {
     } else {
       clickedElement.classList.add("active");
     }
+
+    // this.props.handleMap(event);
   }
 
   render() {
@@ -51,7 +50,12 @@ export default class SingleEvent extends Component {
                   data-collapsible="expandable"
                 >
                   <li>
-                    <div className="collapsible-header" onClick={this.initCol}>
+                    <div
+                      className="collapsible-header"
+                      key={event._id}
+                      onClick={this.initCol}
+                      onMouseDown={this.props.handleMap}
+                    >
                       <i className="material-icons large">arrow_drop_down</i>
                       <p>More Info</p>
                     </div>
