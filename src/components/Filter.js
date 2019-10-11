@@ -3,11 +3,11 @@ import "../css/filter.css";
 
 export function Filter() {
   return (
-    <div>
+    <div className="filterContainer">
       <ul> SORT BY </ul>
       <ul> 30 Days </ul>
       <ul> 3 Months </ul>
-      <ul> ALL Events </ul>
+      <ul className="underlined"> ALL Events </ul>
       <ul> View Calendar </ul>
     </div>
   );

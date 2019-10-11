@@ -2,4 +2,14 @@ ul {
   display: inline;
   font-weight: 500;
   font-size: 24px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.filterContainer {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.underlined {
+  text-decoration: underline;
 }

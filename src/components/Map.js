@@ -1,14 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
+import { Map, GoogleApiWrapper } from "google-maps-react";
+import "../css/map.css";
+// Maps API: AIzaSyATAjl2tOZUIErKORpG0OKsVSQuOxVbrO8
 
-export function Map() {
-  return (
-    <div>
-      <img
-        alt="google world map"
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Google_maps_screenshot.png/300px-Google_maps_screenshot.png"
-      />
-    </div>
-  );
+const mapStyles = {
+  width: "40vw",
+  height: "75vh"
+};
+
+export class GoogleMap extends Component {
+  render() {
+    return (
+      <div className="mapContainer">
+        <Map
+          google={this.props.google}
+          zoom={8}
+          style={mapStyles}
+          initialCenter={{ lat: 47.444, lng: -122.176 }}
+        />
+      </div>
+    );
+  }
 }
 
-export default Map;
+export default GoogleApiWrapper({
+  apiKey: "AIzaSyATAjl2tOZUIErKORpG0OKsVSQuOxVbrO8"
+})(GoogleMap);

@@ -2,7 +2,7 @@
 import React from "react";
 // import SingleEvent from "../components/Event.js";
 import Filter from "./Filter";
-import Map from "../components/Map";
+import GoogleMap from "../components/Map";
 // import "../css/event.css";
 import "../css/grid.css";
 // import SingleEvent from "../SingleEvent";
@@ -21,7 +21,7 @@ export function Main() {
           <DataFetching />
         </div>
         <div className="col s6 col-map">
-          <Map />
+          <GoogleMap />
         </div>
       </div>
     </div>
