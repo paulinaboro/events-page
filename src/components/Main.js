@@ -14,16 +14,16 @@ export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      mapState: null
+      mapLat: 56.0377711,
+      mapLon: 12.6141173
     };
     this.handleMap = this.handleMap.bind(this);
   }
 
   handleMap = event => {
-    console.log(event.target.id);
-    console.log("ola");
     this.setState({
-      mapState: event.target.id
+      mapLat: event.target.getAttribute("data-lat"),
+      mapLon: event.target.getAttribute("data-lon")
     });
   };
 
@@ -39,7 +39,7 @@ export default class Main extends Component {
             <DataFetching handleMap={this.handleMap} />
           </div>
           <div className="col s6 col-map">
-            <GoogleMap />
+            <GoogleMap mapLat={this.state.mapLat} mapLon={this.state.mapLon} />
           </div>
         </div>
       </div>

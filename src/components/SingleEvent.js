@@ -52,7 +52,8 @@ export default class SingleEvent extends Component {
                   <li>
                     <div
                       className="collapsible-header"
-                      key={event._id}
+                      data-lat={event.lat}
+                      data-lon={event.lon}
                       onClick={this.initCol}
                       onMouseDown={this.props.handleMap}
                     >
