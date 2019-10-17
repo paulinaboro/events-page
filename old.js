@@ -5,7 +5,6 @@ import "../css/event.css";
 // import sanitize from "striptags";
 // import { hostname } from "os";
 import SingleEvent from "./SingleEvent";
-import mock from "../mock/mock";
 
 // local hostname:
 // http://localhost:3500/test
@@ -13,42 +12,28 @@ import mock from "../mock/mock";
 // original url:
 // https://valuer-jenkins.duckdns.org/api/events/startups
 
-// local host - test file made by Donatas:
-//localhost:3500/test
-
-const urlData = require("../api/eventsData.json");
-
 export default class DataFetching extends Component {
   state = {
     events: null
   };
   componentDidMount() {
     // console.log(this.props.handleMap);
+
     if (!this.state.events) {
       axios
-        .get("/events")
-        .then(response => {
-          // console.log(response.data.startupEvents);
-          this.setState({ events: response.data.startupEvents });
+        .get("http://localhost:3500/test")
+        .then(res => {
+          console.log(res);
+          // console.log("data from api", res.data);
+          this.setState({ events: JSON.parse(res.data) });
+          //set state to loading false
         })
         .catch(err => {
           console.log(err);
         });
-      // axios
-      //   .get(urlData)
-      //   .then(res => {
-      //     // console.log("data from api", res.data);
-      //     console.log(res);
-      //     this.setState({ events: res });
-      //     //set state to loading false
-      //   })
-      //   .catch(err => {
-      //     console.log(err);
-      //   });
     }
   }
   render() {
-    // console.log("state events", this.state.events);
     // create spinner component later on:
     // let eventsList = <Spinner name={this.state.name} />;
     let eventsList = null;

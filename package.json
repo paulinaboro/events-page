@@ -8,6 +8,7 @@
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-materialize": "^3.4.1",
     "react-scripts": "3.2.0",
     "striptags": "^3.1.1"
   },
@@ -31,5 +32,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.17.0",
+    "dotenv": "^8.1.0"
   }
 }

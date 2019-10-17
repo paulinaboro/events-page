@@ -1,33 +1,28 @@
-// import React, { useState } from "react";
-// import React from "react";
 import React, { Component } from "react";
-// import SingleEvent from "../components/Event.js";
 import Filter from "./Filter";
 import GoogleMap from "../components/Map";
-// import "../css/event.css";
 import "../css/grid.css";
-// import SingleEvent from "../SingleEvent";
 import DataFetching from "./DataFetching";
+// import { updateExpression } from "@babel/types";
 
-// export function Main() {
 export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      mapLat: 56.0377711,
-      mapLon: 12.6141173
+      mapLat: 55.6114726,
+      mapLon: 12.9942663
     };
     this.handleMap = this.handleMap.bind(this);
   }
 
   handleMap = event => {
     this.setState({
-      mapLat: event.target.getAttribute("data-lat"),
-      mapLon: event.target.getAttribute("data-lon")
+      mapLat: event.lat,
+      mapLon: event.lon
     });
   };
+  // };
 
-  //   const allEventsUrl = "https://valuer-jenkins.duckdns.org/api/events/startups";
   render() {
     return (
       <div className="container">
