@@ -21,7 +21,6 @@ export default class Main extends Component {
       mapLon: event.lon
     });
   };
-  // };
 
   render() {
     return (

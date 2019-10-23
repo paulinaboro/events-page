@@ -22,6 +22,7 @@ export default class DataFetching extends Component {
   state = {
     events: null
   };
+
   componentDidMount() {
     // console.log(this.props.handleMap);
     if (!this.state.events) {
